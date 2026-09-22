@@ -1,0 +1,69 @@
+/* CSS Variables */
+:root {
+  --primary: #0A66C2;
+  --secondary: #004182;
+  --accent: #00A0DC;
+  --bg-main: #F4F2EE;
+  --bg-card: #FFFFFF;
+  --text-primary: #191919;
+  --text-secondary: #666666;
+  --border: #E0E0E0;
+  --success: #057642;
+  --warning: #F5C75D;
+  --error: #CC1016;
+}
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #F4F2EE;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4F2EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C4C4C4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #A0A0A0;
+}
+
+/* Selection Color */
+::selection {
+  background: #0A66C2;
+  color: #FFFFFF;
+}
+
+::-moz-selection {
+  background: #0A66C2;
+  color: #FFFFFF;
+}
+
+/* Link Defaults */
+a {
+  text-decoration: none;
+  color: #0A66C2;
+}

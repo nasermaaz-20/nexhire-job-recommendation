@@ -1,0 +1,59 @@
+export const CAREER_LEVELS = {
+  JUNIOR: 1,
+  MID: 2,
+  SENIOR: 3,
+  LEAD: 4
+};
+
+export const EMPLOYMENT_TYPES = {
+  FULL_TIME: 1,
+  PART_TIME: 2,
+  CONTRACT: 3,
+  INTERNSHIP: 4
+};
+
+export const REMOTE_OPTIONS = {
+  ON_SITE: 0,
+  REMOTE: 1,
+  HYBRID: 2
+};
+
+export const INTERACTION_TYPES = {
+  VIEW: 1,
+  SAVE: 2,
+  APPLY: 3
+};
+
+export const COMPANY_INTERACTION_TYPES = {
+  VIEW: 1,
+  SHORTLIST: 2,
+  INVITE: 3,
+  CONTACT: 4
+};
+
+export const APPLICATION_STATUS = {
+  PENDING: 1,
+  REVIEWED: 2,
+  SHORTLISTED: 3,
+  REJECTED: 4,
+  ACCEPTED: 5
+};
+
+export const COMPANY_SIZES = {
+  STARTUP: 1,
+  SMALL: 2,
+  MEDIUM: 3,
+  LARGE: 4,
+  ENTERPRISE: 5
+};
+
+export const INDUSTRIES = {
+  TECHNOLOGY: 1,
+  FINANCE: 2,
+  HEALTHCARE: 3,
+  ECOMMERCE: 4,
+  EDUCATION: 5,
+  CONSULTING: 6,
+  OTHER: 7
+};
+

@@ -1,0 +1,288 @@
+### Variables
+@baseUrl = http://localhost:3000/api
+@userToken = Bearer REPLACE_USER_TOKEN
+@companyToken = Bearer REPLACE_COMPANY_TOKEN
+
+### ═══════════════════════════════════════
+### AUTH
+### ═══════════════════════════════════════
+
+### Register User
+POST {{baseUrl}}/auth/register/user
+Content-Type: application/json
+
+{
+  "name": "أحمد محمد",
+  "email": "ahmed@example.com",
+  "password": "SecurePass123",
+  "years_of_experience": 5,
+  "career_level": 3,
+  "field_id": 1,
+  "current_location_id": 1,
+  "desired_salary_min": 15000,
+  "desired_salary_max": 25000
+}
+
+### Register Company
+POST {{baseUrl}}/auth/register/company
+Content-Type: application/json
+
+{
+  "name": "TechCorp",
+  "email": "hr@techcorp.com",
+  "password": "CompanyPass123",
+  "industry": 1,
+  "company_size": 4,
+  "location_id": 1,
+  "founded_year": 2015,
+  "website": "https://techcorp.com"
+}
+
+### Login User
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "ahmed@example.com",
+  "password": "SecurePass123",
+  "type": "user"
+}
+
+### Login Company
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "hr@techcorp.com",
+  "password": "CompanyPass123",
+  "type": "company"
+}
+
+### ═══════════════════════════════════════
+### USER
+### ═══════════════════════════════════════
+
+### Get Profile
+GET {{baseUrl}}/users/profile
+Authorization: {{userToken}}
+
+### Update Profile
+PUT {{baseUrl}}/users/profile
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "years_of_experience": 6,
+  "career_level": 3
+}
+
+### Add Skills
+POST {{baseUrl}}/users/skills
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "skills": [
+    { "skill_id": 1, "level": 5 },
+    { "skill_id": 2, "level": 4 },
+    { "skill_id": 3, "level": 3 }
+  ]
+}
+
+### Update Preferences
+POST {{baseUrl}}/users/preferences
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "preferred_field_id": 1,
+  "preferred_job_level": 3,
+  "preferred_employment_type": 1,
+  "remote_preference": 2,
+  "min_salary": 16000
+}
+
+### Add Preferred Locations
+POST {{baseUrl}}/users/preferred-locations
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "locations": [
+    { "location_id": 1, "priority": 5 },
+    { "location_id": 2, "priority": 3 }
+  ]
+}
+
+### ═══════════════════════════════════════
+### COMPANY
+### ═══════════════════════════════════════
+
+### Get Company Profile
+GET {{baseUrl}}/companies/profile/me
+Authorization: {{companyToken}}
+
+### Update Company Profile
+PUT {{baseUrl}}/companies/profile
+Authorization: {{companyToken}}
+Content-Type: application/json
+
+{
+  "name": "TechCorp International",
+  "website": "https://techcorp.io"
+}
+
+### Get Company Public Info
+GET {{baseUrl}}/companies/1
+
+### ═══════════════════════════════════════
+### JOBS
+### ═══════════════════════════════════════
+
+### Create Job (Company)
+POST {{baseUrl}}/jobs
+Authorization: {{companyToken}}
+Content-Type: application/json
+
+{
+  "title": "Senior Data Scientist",
+  "field_id": 1,
+  "job_level": 3,
+  "location_id": 1,
+  "min_experience": 4,
+  "max_experience": 8,
+  "salary_min": 18000,
+  "salary_max": 28000,
+  "employment_type": 1,
+  "remote_option": 2,
+  "expires_at": "2030-06-30T00:00:00.000Z"
+}
+
+### List Jobs with Filters
+GET {{baseUrl}}/jobs?field_id=1&job_level=3&location_id=1
+
+### Get Job Details
+GET {{baseUrl}}/jobs/1
+
+### Add Job Skills
+POST {{baseUrl}}/jobs/1/skills
+Authorization: {{companyToken}}
+Content-Type: application/json
+
+{
+  "skills": [
+    { "skill_id": 1, "importance": 5, "is_required": 1 },
+    { "skill_id": 2, "importance": 4, "is_required": 1 },
+    { "skill_id": 3, "importance": 3, "is_required": 0 }
+  ]
+}
+
+### Get My Jobs (Company)
+GET {{baseUrl}}/jobs/my-jobs/list
+Authorization: {{companyToken}}
+
+### ═══════════════════════════════════════
+### INTERACTIONS
+### ═══════════════════════════════════════
+
+### User Interaction with Job
+POST {{baseUrl}}/interactions
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "job_id": 1,
+  "interaction_type": 1
+}
+
+### User Interactions History
+GET {{baseUrl}}/interactions/my-history
+Authorization: {{userToken}}
+
+### Company-Candidate Interaction
+POST {{baseUrl}}/interactions/company-interactions
+Authorization: {{companyToken}}
+Content-Type: application/json
+
+{
+  "user_id": 1,
+  "job_id": 1,
+  "interaction_type": 2
+}
+
+### Company Interactions History
+GET {{baseUrl}}/interactions/company-interactions/history
+Authorization: {{companyToken}}
+
+### ═══════════════════════════════════════
+### APPLICATIONS
+### ═══════════════════════════════════════
+
+### Apply for Job
+POST {{baseUrl}}/applications
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+  "job_id": 1
+}
+
+### My Applications
+GET {{baseUrl}}/applications/my-applications
+Authorization: {{userToken}}
+
+### Applicants for Job (Company)
+GET {{baseUrl}}/applications/job/1
+Authorization: {{companyToken}}
+
+### Update Application Status
+PUT {{baseUrl}}/applications/1/status
+Authorization: {{companyToken}}
+Content-Type: application/json
+
+{
+  "status": 3
+}
+
+### ═══════════════════════════════════════
+### REFERENCE DATA
+### ═══════════════════════════════════════
+
+### Get Locations
+GET {{baseUrl}}/locations
+
+### Get Fields
+GET {{baseUrl}}/fields
+
+### Get Skills (with filter)
+GET {{baseUrl}}/skills?field_id=1
+
+### Get All Enums
+GET {{baseUrl}}/enums
+
+### ═══════════════════════════════════════
+### RECOMMENDATIONS (via Backend)
+### ═══════════════════════════════════════
+
+### Get my job recommendations (User, hybrid)
+GET {{baseUrl}}/recommendations/jobs/me?limit=10&method=hybrid
+Authorization: {{userToken}}
+
+### Get my job recommendations (Content-Based only)
+GET {{baseUrl}}/recommendations/jobs/me?limit=10&method=content
+Authorization: {{userToken}}
+
+### Get my job recommendations (Collaborative only)
+GET {{baseUrl}}/recommendations/jobs/me?limit=10&method=collaborative
+Authorization: {{userToken}}
+
+### Get candidate recommendations for a job (Company)
+GET {{baseUrl}}/recommendations/candidates/1?limit=10&method=hybrid
+Authorization: {{companyToken}}
+
+### Get recommendations for specific user (Public/Admin)
+GET {{baseUrl}}/recommendations/jobs/user/1?limit=5
+
+### ML Service Health Check (via backend)
+GET {{baseUrl}}/recommendations/ml/health
+

@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+venv/
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Environment & secrets — NEVER commit these
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.suo
+
+# Prisma
+backend/prisma/migrations/**/migration_lock.toml
+
+# Python / ML
+ml/.pytest_cache/
+*.pkl
+*.joblib
+
+# Archives (optional — schema.sql is the source of truth)
+*.rar
+*.zip
+
+# Frontend build output
+nexhire-frontend/dist/
