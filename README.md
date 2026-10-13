@@ -4,7 +4,7 @@
 
 **منصة توصية وظائف ذكية مدعومة بالذكاء الاصطناعي**
 
-Graduation Project · Full-Stack Web Application
+Graduation Project · Full-Stack Web Application · Two-person team
 
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white)](https://react.dev/)
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -262,13 +262,13 @@ node create_admin.js
 
 ---
 
-## 👥 Team
+## 👥 Team & My Contribution
 
-Graduation Project — developed as part of a university capstone.
+This university capstone was co-developed by **[Naser Maaz](https://github.com/nasermaaz-20)** and one teammate. We worked jointly across the frontend, backend, recommendation service, and database rather than assigning separate layers to each person.
 
-| Role | Contribution |
-|---|---|
-| Full-Stack Development | Backend, Frontend, ML Pipeline, Database Design |
+**My contribution:** shared implementation and integration across the React frontend, Express API, FastAPI recommendation service, and database. This repository presents our collaborative work.
+
+[My portfolio](https://portfolio.nasermaaz20.workers.dev/) · [LinkedIn](https://www.linkedin.com/in/naser-maaz)
 
 ---
 
