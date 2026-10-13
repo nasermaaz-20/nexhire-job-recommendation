@@ -15,6 +15,10 @@ Graduation Project · Full-Stack Web Application · Two-person team
 
 ---
 
+**Development:** [Naser Maaz](https://github.com/nasermaaz-20) and one teammate jointly developed all project layers. [Team & contribution details](#-team--my-contribution)
+
+[Architecture](#-architecture) · [Local setup](#-getting-started) · [API overview](#-api-overview) · [Developer portfolio](https://portfolio.nasermaaz20.workers.dev/)
+
 ## 📋 نظرة عامة | Overview
 
 **NexHire** is a full-stack job recommendation platform that connects job seekers with relevant opportunities using a **hybrid AI recommendation engine**. The system supports three user roles — job seekers, companies, and administrators — each with dedicated dashboards and workflows.
@@ -134,6 +138,15 @@ job-recommendation/
 - [Python](https://www.python.org/) 3.10+
 - [PostgreSQL](https://www.postgresql.org/) 14+
 - [Git](https://git-scm.com/)
+
+### Clone the repository
+
+```bash
+git clone https://github.com/nasermaaz-20/nexhire-job-recommendation.git
+cd nexhire-job-recommendation
+```
+
+Run each service in its own terminal, starting from the repository root.
 
 ### 1. Database Setup
 
